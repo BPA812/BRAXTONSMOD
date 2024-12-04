@@ -1,6 +1,7 @@
 package net.braxton.braxtonmod;
 
 import com.mojang.logging.LogUtils;
+import net.braxton.braxtonmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -27,6 +28,7 @@ public class BraxtonMod
     public BraxtonMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
